@@ -14,11 +14,13 @@ class AutoPagingIterator implements \Iterator
         $this->params = $params;
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function rewind()
     {
         // Actually rewinding would require making a copy of the original page.
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function current()
     {
         $item = current($this->page->data);
@@ -26,11 +28,13 @@ class AutoPagingIterator implements \Iterator
         return $item;
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function key()
     {
         return key($this->page->data);
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function next()
     {
         $item = next($this->page->data);
@@ -48,6 +52,7 @@ class AutoPagingIterator implements \Iterator
         }
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function valid()
     {
         $key = key($this->page->data);
