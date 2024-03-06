@@ -134,20 +134,25 @@ class StripeObject implements ArrayAccess, JsonSerializable
     }
 
     // ArrayAccess methods
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function offsetSet($k, $v)
     {
         $this->$k = $v;
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function offsetExists($k)
     {
         return array_key_exists($k, $this->_values);
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function offsetUnset($k)
     {
         unset($this->$k);
     }
+
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function offsetGet($k)
     {
         return array_key_exists($k, $this->_values) ? $this->_values[$k] : null;
@@ -254,6 +259,7 @@ class StripeObject implements ArrayAccess, JsonSerializable
         return $params;
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function jsonSerialize()
     {
         return $this->__toArray(true);
