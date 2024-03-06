@@ -37,6 +37,7 @@ class Set implements IteratorAggregate
         return array_keys($this->_elts);
     }
 
+    #[\ReturnTypeWillChange] // temporarily suppressed (php 8.x expects explicit return type, not phpdoc)
     public function getIterator()
     {
         return new ArrayIterator($this->toArray());
